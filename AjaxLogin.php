@@ -1,5 +1,5 @@
 <?php
-namespace cmsgears\login;
+namespace cmsgears\widgets\login;
 
 // Yii Imports
 use \Yii;
@@ -73,7 +73,10 @@ class AjaxLogin extends Widget {
 
 		$this->registerJs();
 
-		return $this->render( $this->view );
+		return $this->render( $this->view, [
+			'options' => $this->options,
+			'actions' => $this->actions
+		] );
     }
 
 	/**

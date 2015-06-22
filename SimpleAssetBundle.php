@@ -5,6 +5,9 @@ namespace cmsgears\login;
 use yii\web\AssetBundle;
 use yii\web\View;
 
+/**
+ * The login widget asset bundle for cmsgears. It needs jQuery.
+ */
 class SimpleAssetBundle extends AssetBundle {
 
 	// Public variables --------------------------------------------
@@ -28,11 +31,6 @@ class SimpleAssetBundle extends AssetBundle {
 	// Define the Position to load Assets
     public $jsOptions = [
         'position' => View::POS_END
-    ];
-
-	// Define dependent Asset Loaders
-    public $depends = [
-		'yii\web\JqueryAsset'
     ];
 
 	// Constructor and Initialisation ------------------------------
