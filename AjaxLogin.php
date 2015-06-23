@@ -4,7 +4,6 @@ namespace cmsgears\widgets\login;
 // Yii Imports
 use \Yii;
 use yii\base\Widget;
-use yii\web\View;
 use yii\helpers\Html;
 
 // TODO: Add a bootstrap view apart from cmgtools
@@ -73,10 +72,11 @@ class AjaxLogin extends Widget {
 
 		$this->registerJs();
 
-		return $this->render( $this->view, [
-			'options' => $this->options,
+		$widgetHtml = $this->render( $this->view, [
 			'actions' => $this->actions
 		] );
+
+		return Html::tag( 'div', $widgetHtml, $this->options );
     }
 
 	/**
