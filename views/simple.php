@@ -10,17 +10,17 @@ use yii\helpers\Html;
 <?php } ?>
 <div id="box-login" class='popout-header'>
 	<form class="frm-ajax" id="frm-login" group="0" key="5" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/login"); ?>" method="post">
-		<div class="max-area-cover frm-spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
+		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-at"></span><input  type="text" name="Login[email]" placeholder="Email *">
 		</div>
-		<span class="error" formError="email"></span>
+		<span class="error" cmt-error="email"></span>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-lock"></span><input  type="password" name="Login[password]" placeholder="Password *">
 		</div>
-		<span class="error" formError="password"></span>
+		<span class="error" cmt-error="password"></span>
 		
 		<div class="row clearfix">
 			<?= Html::a( "Forgot your Password ?", [ '/forgot-password' ] ) ?>
@@ -31,7 +31,7 @@ use yii\helpers\Html;
 		</div>
 
 		<div class="row clearfix">
-			<div class="frm-message warning"></div>
+			<div class="message warning"></div>
 		</div>
 		
 		<?php if( !$actions ) { ?>
@@ -43,37 +43,37 @@ use yii\helpers\Html;
 </div>
 <div id="box-signup" class='popout-header'>
 	<form class="frm-ajax" id="frm-register" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/register"); ?>" method="post">
-		<div class="max-area-cover frm-spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
+		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-at"></span><input type="text" name="Register[email]" placeholder="Email *">
 		</div>
-		<span class="error" formError="email"></span>
+		<span class="error" cmt-error="email"></span>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-lock"></span><input type="password" name="Register[password]" placeholder="Password *">
 		</div>
-		<span class="error" formError="password"></span>
+		<span class="error" cmt-error="password"></span>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-lock"></span><input type="password" name="Register[password_repeat]" placeholder="Repeat Password *">
 		</div>
-		<span class="error" formError="password_repeat"></span>
+		<span class="error" cmt-error="password_repeat"></span>
 		
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[username]" placeholder="Username *">
 		</div>
-		<span class="error" formError="username"></span>
+		<span class="error" cmt-error="username"></span>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[firstName]" placeholder="First Name">
 		</div>
-		<span class="error" formError="firstName"></span>
+		<span class="error" cmt-error="firstName"></span>
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[lastName]" placeholder="Last Name">
 		</div>
-		<span class="error" formError="lastName"></span>
+		<span class="error" cmt-error="lastName"></span>
 
 		<div class="row clearfix">
 			<input type="checkbox" name="Register[newsletter]"> Sign Up for our newsletter.
@@ -84,7 +84,7 @@ use yii\helpers\Html;
 		</div>
 
 		<div class="row clearfix">
-			<div class="frm-message warning"></div>
+			<div class="message warning"></div>
 		</div>
 		
 		<?php if( !$actions ) { ?>
