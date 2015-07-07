@@ -9,7 +9,7 @@ use yii\helpers\Html;
 </div>
 <?php } ?>
 <div id="box-login" class='popout-header'>
-	<form class="frm-ajax" id="frm-login" cmt-controller="default" cmt-action="login" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/login"); ?>" method="post">
+	<form class="frm-ajax" id="frm-login" group="0" key="5" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/login"); ?>" method="post">
 		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
 
 		<div class="frm-icon-field">
