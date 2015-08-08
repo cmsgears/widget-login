@@ -11,7 +11,7 @@ use yii\helpers\Html;
 /**
  * The AjaxLogin widget can be used to embed ajaxified login form within the view.
  */
-class AjaxLogin extends \cmsgears\core\common\widgets\BaseWidget {
+class AjaxLogin extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
