@@ -25,7 +25,7 @@ class SimpleAssetBundle extends AssetBundle {
 	// Load Javascript
 
     public $js      = [
-		'scripts/simple.js'
+		'scripts/login-simple.js'
     ];
 
 	// Define the Position to load Assets

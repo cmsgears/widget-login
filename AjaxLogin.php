@@ -57,7 +57,7 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	private function registerJs() {
 
 		// Register resources
-		switch( $this->view ) {
+		switch( $this->viewFile ) {
 
 			case 'simple': {
 

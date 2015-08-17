@@ -1,16 +1,12 @@
 {
 	"name": "cmsgears/widget-login",
-	"description": "The Ajax Login widget for CMSGears.",
+	"description": "Login Widget for CMSGears provide Ajax based login and registration forms that can be called at desired location on a web page.",
 	"homepage": "http://www.cmsgears.org",
 	"type": "package",
 	"keywords": [ "yii2", "cmsgears", "widget", "login", "ajax login" ],
 	"license": "GPLv3",
 	"support": {
-        "source": "http://www.cmsgears.org/downloads/widgets/login",
-		"forum": "http://forum.cmsgears.org/",
-		"resources": "http://resources.cmsgears.org/",
-		"issues": "https://www.amazingdesk.com/cmsgears/issues/",
-		"blog": "http://cmsgears.tutorials24x7.com/"
+		"resources": "http://www.cmsgears.org/"
 	},
 	"autoload": {
 		"psr-4": {
