@@ -44,7 +44,11 @@ use yii\helpers\Html;
 <div id="box-signup" class='popout-header'>
 	<form class="frm-ajax" id="frm-register" cmt-controller="default" cmt-action="register" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/register"); ?>" method="post">
 		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
-
+		<div class="frm-icon-field">
+			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[username]" placeholder="Username *">
+		</div>
+		<span class="error" cmt-error="username"></span>
+		
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-at"></span><input type="text" name="Register[email]" placeholder="Email *">
 		</div>
@@ -60,10 +64,7 @@ use yii\helpers\Html;
 		</div>
 		<span class="error" cmt-error="password_repeat"></span>
 		<!--
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[username]" placeholder="Username *">
-		</div>
-		<span class="error" cmt-error="username"></span>
+		
 
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[firstName]" placeholder="First Name">
@@ -80,6 +81,10 @@ use yii\helpers\Html;
 		</div>
 
 		<div class="row clearfix">
+			<div class="row clearfix">
+				<input type="checkbox" name="Register[terms]"> <span class="text">I agree to Terms and Conditions and Privacy.</span>
+			</div>
+			<span class="error" cmt-error="terms"></span>
 			<input type="submit" name="submit" value="Sign Up">
 		</div>
 
