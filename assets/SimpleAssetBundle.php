@@ -1,5 +1,5 @@
 <?php
-namespace cmsgears\widgets\login;
+namespace cmsgears\widgets\login\assets;
 
 // Yii Imports
 use yii\web\AssetBundle;

@@ -6,6 +6,9 @@ use \Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 
+// CMG Imports
+use cmsgears\widgets\login\assets\SimpleAssetBundle;
+
 // TODO: Add a bootstrap view apart from cmgtools
 
 /**
