@@ -13,17 +13,14 @@ class SimpleAssetBundle extends AssetBundle {
 	// Public variables --------------------------------------------
 
 	// Path Configuration
-
     public $sourcePath = '@cmsgears/widget-login/resources';
 
 	// Load CSS
-
     public $css     = [
 		// Add CSS
     ];
 
 	// Load Javascript
-
     public $js      = [
 		'scripts/login-simple.js'
     ];
@@ -31,6 +28,11 @@ class SimpleAssetBundle extends AssetBundle {
 	// Define the Position to load Assets
     public $jsOptions = [
         'position' => View::POS_END
+    ];
+
+	// Define dependent Asset Loaders
+    public $depends = [
+		'yii\web\JqueryAsset'
     ];
 
 	// Constructor and Initialisation ------------------------------

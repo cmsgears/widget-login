@@ -47,7 +47,7 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 
 		$this->registerJs();
 
-		$widgetHtml = $this->render( $this->viewFile, [
+		$widgetHtml = $this->render( $this->template, [
 			'actions' => $this->actions
 		]);
 
@@ -59,8 +59,8 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	 */
 	private function registerJs() {
 
-		// Register resources
-		switch( $this->viewFile ) {
+		// Register template resources
+		switch( $this->template ) {
 
 			case 'simple': {
 

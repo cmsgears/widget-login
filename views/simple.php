@@ -63,9 +63,8 @@ use yii\helpers\Html;
 			<span class="wrap-icon fa fa-lock"></span><input type="password" name="Register[password_repeat]" placeholder="Repeat Password *">
 		</div>
 		<span class="error" cmt-error="password_repeat"></span>
-		<!--
 		
-
+		<!--
 		<div class="frm-icon-field">
 			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[firstName]" placeholder="First Name">
 		</div>
@@ -76,6 +75,7 @@ use yii\helpers\Html;
 		</div>
 		<span class="error" cmt-error="lastName"></span>
 		-->
+		
 		<div class="row clearfix">
 			<input type="checkbox" name="Register[newsletter]"> Sign Up for our newsletter.
 		</div>
