@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 ?>
 
 <?php if( $actions ) { ?>
@@ -9,16 +10,18 @@ use yii\helpers\Html;
 </div>
 <?php } ?>
 <div id="box-login" class='popout-header'>
-	<form class="frm-ajax" id="frm-login" cmt-controller="default" cmt-action="login" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/login"); ?>" method="post">
+	<form class="cmt-form" id="frm-login" cmt-controller="user" cmt-action="login" action="<?= Url::toRoute( ['apix/site/login' ], true ) ?>" method="post">
 		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
 
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-at"></span><input  type="text" name="Login[email]" placeholder="Email *">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-at"></span>
+			<input  type="text" name="Login[email]" placeholder="Email *">
 		</div>
 		<span class="error" cmt-error="email"></span>
 
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-lock"></span><input  type="password" name="Login[password]" placeholder="Password *">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-lock-close"></span>
+			<input  type="password" name="Login[password]" placeholder="Password *">
 		</div>
 		<span class="error" cmt-error="password"></span>
 		
@@ -36,46 +39,50 @@ use yii\helpers\Html;
 
 		<?php if( !$actions ) { ?>
 		<div class="row clearfix">
-			<?= Html::a( "Sign Up", [ '#' ], [ 'id' => 'box-signup-show'] ) ?>
+			<?= Html::a( 'Sign Up', [ '#' ], [ 'id' => 'box-signup-show'] ) ?>
 		</div>
 		<?php } ?>
 	</form>
 </div>
 <div id="box-signup" class='popout-header'>
-	<form class="frm-ajax" id="frm-register" cmt-controller="default" cmt-action="register" action="<?php echo Yii::$app->urlManager->createAbsoluteUrl("apix/register"); ?>" method="post">
+	<form class="cmt-form" id="frm-register" cmt-controller="user" cmt-action="register" action="<?= Url::toRoute( ['apix/site/register' ], true ) ?>" method="post">
 		<div class="max-area-cover spinner"><div class="valign-center fa fa-3x fa-spinner fa-spin"></div></div>
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[username]" placeholder="Username *">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-user"></span>
+			<input type="text" name="Register[username]" placeholder="Username *">
 		</div>
 		<span class="error" cmt-error="username"></span>
-		
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-at"></span><input type="text" name="Register[email]" placeholder="Email *">
+
+		<div class="frm-icon-element">
+			<span class="cmti cmti-at"></span>
+			<input type="text" name="Register[email]" placeholder="Email *">
 		</div>
 		<span class="error" cmt-error="email"></span>
 
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-lock"></span><input type="password" name="Register[password]" placeholder="Password *">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-lock-close"></span>
+			<input type="password" name="Register[password]" placeholder="Password *">
 		</div>
 		<span class="error" cmt-error="password"></span>
 
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-lock"></span><input type="password" name="Register[password_repeat]" placeholder="Repeat Password *">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-lock-close"></span>
+			<input type="password" name="Register[password_repeat]" placeholder="Repeat Password *">
 		</div>
 		<span class="error" cmt-error="password_repeat"></span>
-		
-		<!--
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[firstName]" placeholder="First Name">
+
+		<div class="frm-icon-element">
+			<span class="cmti cmti-user"></span>
+			<input type="text" name="Register[firstName]" placeholder="First Name">
 		</div>
 		<span class="error" cmt-error="firstName"></span>
 
-		<div class="frm-icon-field">
-			<span class="wrap-icon fa fa-user"></span><input type="text" name="Register[lastName]" placeholder="Last Name">
+		<div class="frm-icon-element">
+			<span class="cmti cmti-user"></span>
+			<input type="text" name="Register[lastName]" placeholder="Last Name">
 		</div>
 		<span class="error" cmt-error="lastName"></span>
-		-->
-		
+
 		<div class="row clearfix">
 			<input type="checkbox" name="Register[newsletter]"> Sign Up for our newsletter.
 		</div>
@@ -91,10 +98,10 @@ use yii\helpers\Html;
 		<div class="row clearfix">
 			<div class="message warning"></div>
 		</div>
-		
+
 		<?php if( !$actions ) { ?>
 		<div class="row clearfix">
-			<?= Html::a( "Login", [ '#' ], [ 'id' => 'box-login-show'] ) ?>
+			<?= Html::a( 'Login', [ '#' ], [ 'id' => 'box-login-show' ] ) ?>
 		</div>
 		<?php } ?>
 	</form>
