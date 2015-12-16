@@ -8,7 +8,7 @@ use yii\web\View;
 /**
  * The login widget asset bundle for cmsgears. It needs jQuery.
  */
-class SimpleAssetBundle extends AssetBundle {
+class LoginAssetBundle extends AssetBundle {
 
 	// Public variables --------------------------------------------
 
@@ -22,7 +22,7 @@ class SimpleAssetBundle extends AssetBundle {
 
 	// Load Javascript
     public $js      = [
-		'scripts/login-simple.js'
+		'scripts/main.js'
     ];
 
 	// Define the Position to load Assets
