@@ -45,7 +45,7 @@ use yii\helpers\Url;
 				<span class="error" cmt-error="password"></span>
 			</div>
 			<div>
-				<?= Html::a( "Forgot your Password ?", [ '/forgot-password' ] ) ?>
+				<?= Html::a( "Forgot your Password ?", [ '/forgot-password' ], [ 'class' => 'btn-forgot-password' ] ) ?>
 			</div>
 			<div class="filler-height"></div>
 			<div>
@@ -55,6 +55,35 @@ use yii\helpers\Url;
 			<div class="wrap-signup-btn">
 				<span class="btn-signup">Sign Up</span>
 			</div>
+		</form>
+	</div>
+	<div id="box-forgot-password" class='box-forgot-password'>
+		<form class="cmt-form" id="frm-forgot-password" cmt-controller="user" cmt-action="forgotPassword" action="<?= Url::toRoute( ['apix/site/forgot-password' ], true ) ?>" method="post">
+			<div class="max-area-cover spinner">
+				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
+			</div>
+			<div class="frm-field clearfix">
+				<?php if( $label ) { ?>
+					<label>Email *</label>
+				<?php } ?>
+				<?php if( $fieldIcon ) { ?>
+					<div class="frm-icon-element">
+						<span class="cmti cmti-at"></span>
+						<input  type="text" name="ForgotPassword[email]" placeholder="Email *">
+					</div>
+				<?php } else { ?>
+					<input  type="text" name="ForgotPassword[email]" placeholder="Email *">
+				<?php } ?>
+				<span class="error" cmt-error="email"></span>
+			</div>
+			<div>
+				<?= Html::a( "Login ?", [ '/login' ], [ 'class' => 'btn-login' ] ) ?>
+			</div>
+			<div class="filler-height"></div>
+			<div>
+				<input type="submit" name="submit" value="Submit">
+			</div>
+			<div class="message warning"></div>
 		</form>
 	</div>
 <?php } ?>
