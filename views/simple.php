@@ -90,7 +90,7 @@ use yii\helpers\Url;
 
 <?php if( $register ) { ?>
 	<div id="box-signup" class='box-signup'>
-		<form class="cmt-form" id="frm-register" cmt-controller="user" cmt-action="register" action="<?= Url::toRoute( ['apix/site/register' ], true ) ?>" method="post">
+		<form class="cmt-form" id="frm-signup" cmt-controller="user" cmt-action="register" action="<?= Url::toRoute( ['apix/site/register' ], true ) ?>" method="post">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
