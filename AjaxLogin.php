@@ -7,7 +7,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 
 // CMG Imports
-use cmsgears\widgets\login\assets\LoginAssetBundle;
+use cmsgears\widgets\login\assets\LoginAssets;
 
 // TODO: Add a bootstrap view apart from cmgtools
 
@@ -73,7 +73,7 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 
 		if( $this->loadAssets ) {
 
-			LoginAssetBundle::register( $this->getView() );
+			LoginAssets::register( $this->getView() );
 		}
 
 		$widgetHtml = $this->render( $this->template, [

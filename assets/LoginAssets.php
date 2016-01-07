@@ -8,7 +8,7 @@ use yii\web\View;
 /**
  * The login widget asset bundle for cmsgears. It needs jQuery.
  */
-class LoginAssetBundle extends AssetBundle {
+class LoginAssets extends AssetBundle {
 
 	// Public variables --------------------------------------------
 
