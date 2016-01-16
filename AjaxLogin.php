@@ -76,6 +76,14 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 			LoginAssets::register( $this->getView() );
 		}
 
+		$widgetHtml = $this->renderWidget();
+
+		// wraps both the login and register boxes in a div.
+		return Html::tag( 'div', $widgetHtml, $this->options );
+    }
+
+	public function renderWidget( $config = [] ) {
+
 		$widgetHtml = $this->render( $this->template, [
 			'login' => $this->login, 
 			'register' => $this->register,
@@ -85,9 +93,8 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 			'actions' => $this->actions
 		]);
 
-		// wraps both the login and register boxes in a div.
-		return Html::tag( 'div', $widgetHtml, $this->options );
-    }
+		return $widgetHtml;
+	}
 }
 
 ?>
