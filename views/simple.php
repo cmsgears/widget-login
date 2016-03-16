@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-use yii\helpers\Url;
 ?>
 
 <?php if( $actions ) { ?>
@@ -12,7 +11,7 @@ use yii\helpers\Url;
 
 <?php if( $login ) { ?>
 	<div id="box-login" class='box-login'>
-		<form class="cmt-form" id="frm-login" cmt-controller="user" cmt-action="login" action="<?= Url::toRoute( ['apix/site/login' ], true ) ?>" method="post">
+		<form id="frm-login" class="cmt-form" cmt-controller="user" cmt-action="login" action="site/login">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -58,7 +57,7 @@ use yii\helpers\Url;
 		</form>
 	</div>
 	<div id="box-forgot-password" class='box-forgot-password'>
-		<form class="cmt-form" id="frm-forgot-password" cmt-controller="user" cmt-action="forgotPassword" action="<?= Url::toRoute( ['apix/site/forgot-password' ], true ) ?>" method="post">
+		<form id="frm-forgot-password" class="cmt-form" cmt-controller="user" cmt-action="forgotPassword" action="site/forgot-password">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -90,7 +89,7 @@ use yii\helpers\Url;
 
 <?php if( $register ) { ?>
 	<div id="box-signup" class='box-signup'>
-		<form class="cmt-form" id="frm-signup" cmt-controller="user" cmt-action="register" action="<?= Url::toRoute( ['apix/site/register' ], true ) ?>" method="post">
+		<form id="frm-signup" class="cmt-form" cmt-controller="user" cmt-action="register" action="site/register">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
