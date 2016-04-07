@@ -181,9 +181,6 @@ use yii\helpers\Html;
 			</div>
 			<?php } ?>
 
-			<div class="clearfix">
-				<input type="checkbox" name="Register[newsletter]"> Sign Up for our newsletter.
-			</div>
 			<div class="filler-height"></div>
 			<div class="clearfix">
 				<div class="clearfix">
