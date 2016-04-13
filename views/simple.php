@@ -56,6 +56,9 @@ use yii\helpers\Html;
 			</div>
 		</form>
 	</div>
+<?php } ?>
+
+<?php if( $forgotPassword ) { ?>
 	<div id="box-forgot-password" class='box-forgot-password'>
 		<form id="frm-forgot-password" class="cmt-form" cmt-controller="user" cmt-action="forgotPassword" action="site/forgot-password">
 			<div class="max-area-cover spinner">

@@ -23,26 +23,31 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	/**
 	 * It determines whether login box is required.
 	 */
-	public $login		= true;
+	public $login			= true;
 
 	/**
 	 * It determines whether register box is required.
-	 */	
+	 */
+	public $forgotPassword	= true;
+
+	/**
+	 * It determines whether register box is required.
+	 */
 	public $register	= true;
 
 	/**
 	 * It determines whether label should be displayed.
-	 */	
+	 */
 	public $label		= false;
 
 	/**
 	 * It determines whether field icon should be displayed.
-	 */	
+	 */
 	public $fieldIcon	= true;
 
 	/**
 	 * It determines whether option fields i.e. username, first name and last name should be displayed.
-	 */	
+	 */
 	public $optionalFields	= true;
 
 	/**
@@ -85,7 +90,8 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	public function renderWidget( $config = [] ) {
 
 		$widgetHtml = $this->render( $this->template, [
-			'login' => $this->login, 
+			'login' => $this->login,
+			'forgotPassword' => $this->forgotPassword,
 			'register' => $this->register,
 			'label' => $this->label,
 			'fieldIcon' => $this->fieldIcon,
