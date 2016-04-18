@@ -21,8 +21,8 @@ use yii\helpers\Html;
 				<?php } ?>
 				<?php if( $fieldIcon ) { ?>
 					<div class="frm-icon-element">
-						<span class="cmti cmti-at"></span>
-						<input  type="text" name="Login[email]" placeholder="Email *">
+						<span class="cmti cmti-user"></span>
+						<input  type="text" name="Login[email]" placeholder="Email or Username*">
 					</div>
 				<?php } else { ?>
 					<input  type="text" name="Login[email]" placeholder="Email *">
@@ -187,7 +187,8 @@ use yii\helpers\Html;
 			<div class="filler-height"></div>
 			<div class="clearfix">
 				<div class="clearfix">
-					<input type="checkbox" name="Register[terms]"> <em>I agree to Terms and Conditions and Privacy.</em>
+					<input type="checkbox" name="Register[terms]">
+					<em>I agree to the <?= Html::a( "Terms", [ '/terms' ], null ) ?> and <?= Html::a( "Privacy Policy", [ '/privacy' ], null ) ?></em>
 				</div>
 				<span class="error" cmt-error="terms"></span>
 			</div>
