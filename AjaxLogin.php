@@ -55,6 +55,24 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	 */
 	public $actions		= false;
 
+    /**
+     * Dynamic Controller Actions
+     */
+    //----------- Login ----------------
+    public $loginCmtController      = 'user';
+    public $loginCmtAction          = 'login';
+    public $loginAction             = 'site/login';
+
+    //----------- Forgot ----------------
+    public $forgotCmtController     = 'user';
+    public $forgotCmtAction         = 'forgotPassword';
+    public $forgotAction            = 'site/forgot-password';
+
+    //----------- Register ----------------
+    public $registerCmtController   = 'user';
+    public $registerCmtAction       = 'register';
+    public $registerAction          = 'site/register';
+
 	// Constructor and Initialisation ------------------------------
 
 	// yii\base\Object
@@ -96,7 +114,8 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 			'label' => $this->label,
 			'fieldIcon' => $this->fieldIcon,
 			'optionalFields' => $this->optionalFields,
-			'actions' => $this->actions
+			'actions' => $this->actions,
+			'widget' => $this
 		]);
 
 		return $widgetHtml;

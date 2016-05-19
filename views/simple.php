@@ -11,7 +11,7 @@ use yii\helpers\Html;
 
 <?php if( $login ) { ?>
 	<div id="box-login" class='box-login'>
-		<form id="frm-login" class="cmt-form" cmt-controller="user" cmt-action="login" action="site/login">
+		<form id="frm-login" class="cmt-form" cmt-controller="<?=$widget->loginCmtController?>" cmt-action="<?=$widget->loginCmtAction?>" action="<?=$widget->loginAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -60,7 +60,7 @@ use yii\helpers\Html;
 
 <?php if( $forgotPassword ) { ?>
 	<div id="box-forgot-password" class='box-forgot-password'>
-		<form id="frm-forgot-password" class="cmt-form" cmt-controller="user" cmt-action="forgotPassword" action="site/forgot-password">
+		<form id="frm-forgot-password" class="cmt-form" cmt-controller="<?=$widget->forgotCmtController?>" cmt-action="<?=$widget->forgotCmtAction?>" action="<?=$widget->forgotAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -92,7 +92,7 @@ use yii\helpers\Html;
 
 <?php if( $register ) { ?>
 	<div id="box-signup" class='box-signup'>
-		<form id="frm-signup" class="cmt-form" cmt-controller="user" cmt-action="register" action="site/register">
+		<form id="frm-signup" class="cmt-form" cmt-controller="<?=$widget->registerCmtController?>" cmt-action="<?=$widget->registerCmtAction?>" action="<?=$widget->registerAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
