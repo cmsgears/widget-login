@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-use yii\helpers\Url;
 ?>
 
 <?php if( $actions ) { ?>
@@ -12,7 +11,7 @@ use yii\helpers\Url;
 
 <?php if( $login ) { ?>
 	<div id="box-login" class='box-login'>
-		<form class="cmt-form" id="frm-login" cmt-controller="user" cmt-action="login" action="<?= Url::toRoute( ['apix/site/login' ], true ) ?>" method="post">
+		<form id="frm-login" class="cmt-form" cmt-controller="<?=$widget->loginCmtController?>" cmt-action="<?=$widget->loginCmtAction?>" action="<?=$widget->loginAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -22,8 +21,8 @@ use yii\helpers\Url;
 				<?php } ?>
 				<?php if( $fieldIcon ) { ?>
 					<div class="frm-icon-element">
-						<span class="cmti cmti-at"></span>
-						<input  type="text" name="Login[email]" placeholder="Email *">
+						<span class="cmti cmti-user"></span>
+						<input  type="text" name="Login[email]" placeholder="Email or Username*">
 					</div>
 				<?php } else { ?>
 					<input  type="text" name="Login[email]" placeholder="Email *">
@@ -57,8 +56,11 @@ use yii\helpers\Url;
 			</div>
 		</form>
 	</div>
+<?php } ?>
+
+<?php if( $forgotPassword ) { ?>
 	<div id="box-forgot-password" class='box-forgot-password'>
-		<form class="cmt-form" id="frm-forgot-password" cmt-controller="user" cmt-action="forgotPassword" action="<?= Url::toRoute( ['apix/site/forgot-password' ], true ) ?>" method="post">
+		<form id="frm-forgot-password" class="cmt-form" cmt-controller="<?=$widget->forgotCmtController?>" cmt-action="<?=$widget->forgotCmtAction?>" action="<?=$widget->forgotAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -90,7 +92,7 @@ use yii\helpers\Url;
 
 <?php if( $register ) { ?>
 	<div id="box-signup" class='box-signup'>
-		<form class="cmt-form" id="frm-signup" cmt-controller="user" cmt-action="register" action="<?= Url::toRoute( ['apix/site/register' ], true ) ?>" method="post">
+		<form id="frm-signup" class="cmt-form" cmt-controller="<?=$widget->registerCmtController?>" cmt-action="<?=$widget->registerCmtAction?>" action="<?=$widget->registerAction?>">
 			<div class="max-area-cover spinner">
 				<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 			</div>
@@ -182,13 +184,11 @@ use yii\helpers\Url;
 			</div>
 			<?php } ?>
 
-			<div class="clearfix">
-				<input type="checkbox" name="Register[newsletter]"> Sign Up for our newsletter.
-			</div>
 			<div class="filler-height"></div>
 			<div class="clearfix">
 				<div class="clearfix">
-					<input type="checkbox" name="Register[terms]"> <em>I agree to Terms and Conditions and Privacy.</em>
+					<input type="checkbox" name="Register[terms]">
+					<em>I agree to the <?= Html::a( "Terms", [ '/terms' ], null ) ?> and <?= Html::a( "Privacy Policy", [ '/privacy' ], null ) ?></em>
 				</div>
 				<span class="error" cmt-error="terms"></span>
 			</div>
