@@ -33,17 +33,17 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	/**
 	 * It determines whether register box is required.
 	 */
-	public $register	= true;
+	public $register		= true;
 
 	/**
 	 * It determines whether label should be displayed.
 	 */
-	public $label		= false;
+	public $label			= false;
 
 	/**
 	 * It determines whether field icon should be displayed.
 	 */
-	public $fieldIcon	= true;
+	public $fieldIcon		= true;
 
 	/**
 	 * It determines whether option fields i.e. username, first name and last name should be displayed.
@@ -53,7 +53,7 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	/**
 	 * It determines whether the login and register box actions are included in widget. The actions can also lie outside the widget.
 	 */
-	public $actions		= false;
+	public $actions			= false;
 
     /**
      * Dynamic Controller Actions
@@ -65,12 +65,12 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 
     //----------- Forgot ----------------
     public $forgotCmtController     = 'user';
-    public $forgotCmtAction         = 'forgotPassword';
+    public $forgotCmtAction         = 'default';
     public $forgotAction            = 'site/forgot-password';
 
     //----------- Register ----------------
     public $registerCmtController   = 'user';
-    public $registerCmtAction       = 'register';
+    public $registerCmtAction       = 'default';
     public $registerAction          = 'site/register';
 
 	// Constructor and Initialisation ------------------------------
@@ -94,11 +94,6 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	 */
     public function run() {
 
-		if( $this->loadAssets ) {
-
-			LoginAssets::register( $this->getView() );
-		}
-
 		$widgetHtml = $this->renderWidget();
 
 		// wraps both the login and register boxes in a div.
@@ -121,5 +116,3 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 		return $widgetHtml;
 	}
 }
-
-?>
