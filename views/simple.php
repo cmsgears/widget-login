@@ -1,7 +1,6 @@
 <?php
 use yii\helpers\Html;
 ?>
-
 <div class="wrap-login-box">
 	<?php if( $actions ) { ?>
 	<div class="row login-actions">
@@ -12,7 +11,7 @@ use yii\helpers\Html;
 
 	<?php if( $login ) { ?>
 		<div class='box-login'>
-			<form cmt-app="user" cmt-controller="<?= $widget->loginCmtController ?>" cmt-action="<?= $widget->loginCmtAction ?>" action="<?= $widget->loginAction ?>">
+			<form cmt-app="site" cmt-controller="<?= $widget->loginCmtController ?>" cmt-action="<?= $widget->loginCmtAction ?>" action="<?= $widget->loginAction ?>">
 				<div class="max-area-cover spinner">
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>
@@ -65,7 +64,7 @@ use yii\helpers\Html;
 
 	<?php if( $forgotPassword ) { ?>
 		<div class='box-forgot-password'>
-			<form cmt-app="user" cmt-controller="<?= $widget->forgotCmtController ?>" cmt-action="<?= $widget->forgotCmtAction ?>" action="<?= $widget->forgotAction ?>">
+			<form cmt-app="site" cmt-controller="<?= $widget->forgotCmtController ?>" cmt-action="<?= $widget->forgotCmtAction ?>" action="<?= $widget->forgotAction ?>">
 				<div class="max-area-cover spinner">
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>
@@ -101,7 +100,7 @@ use yii\helpers\Html;
 
 	<?php if( $register ) { ?>
 		<div class='box-signup'>
-			<form cmt-app="user" cmt-controller="<?=$widget->registerCmtController?>" cmt-action="<?=$widget->registerCmtAction?>" action="<?=$widget->registerAction?>">
+			<form cmt-app="site" cmt-controller="<?=$widget->registerCmtController?>" cmt-action="<?=$widget->registerCmtAction?>" action="<?=$widget->registerAction?>">
 				<div class="max-area-cover spinner">
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>

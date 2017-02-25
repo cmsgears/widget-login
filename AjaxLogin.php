@@ -59,17 +59,17 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
      * Dynamic Controller Actions
      */
     //----------- Login ----------------
-    public $loginCmtController      = 'user';
+    public $loginCmtController      = 'site';
     public $loginCmtAction          = 'login';
     public $loginAction             = 'site/login';
 
     //----------- Forgot ----------------
-    public $forgotCmtController     = 'user';
+    public $forgotCmtController     = 'site';
     public $forgotCmtAction         = 'default';
     public $forgotAction            = 'site/forgot-password';
 
     //----------- Register ----------------
-    public $registerCmtController   = 'user';
+    public $registerCmtController   = 'site';
     public $registerCmtAction       = 'default';
     public $registerAction          = 'site/register';
 
