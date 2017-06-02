@@ -11,12 +11,15 @@ use yii\helpers\Html;
 
 	<?php if( $login ) { ?>
 		<div class='box-login'>
+			<?php if( $loginDisabled ) { ?>
+				<p class="info"><?= $loginMessage ?>
+			<?php } else { ?>
 			<form cmt-app="site" cmt-controller="<?= $widget->loginCmtController ?>" cmt-action="<?= $widget->loginCmtAction ?>" action="<?= $widget->loginAction ?>">
 				<div class="max-area-cover spinner">
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>
 				<div class="wrap-login-fields">
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Email *</label>
 						<?php } ?>
@@ -30,7 +33,7 @@ use yii\helpers\Html;
 						<?php } ?>
 						<span class="error" cmt-error="email"></span>
 					</div>
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Password *</label>
 						<?php } ?>
@@ -59,6 +62,7 @@ use yii\helpers\Html;
 					<span class="btn-signup">Sign Up</span>
 				</div>
 			</form>
+			<?php } ?>
 		</div>
 	<?php } ?>
 
@@ -69,7 +73,7 @@ use yii\helpers\Html;
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>
 				<div class="wrap-forgot-fields">
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Email *</label>
 						<?php } ?>
@@ -88,24 +92,27 @@ use yii\helpers\Html;
 					<?= Html::a( "Login ?", [ '/login' ], [ 'class' => 'btn-login' ] ) ?>
 				</div>
 				<div class="filler-height"></div>
-				<div>
-					<input type="submit" name="submit" value="Submit">
-				</div>
 				<div class="message success"></div>
 				<div class="message warning"></div>
 				<div class="message error"></div>
+				<div>
+					<input type="submit" name="submit" value="Submit">
+				</div>
 			</form>
 		</div>
 	<?php } ?>
 
 	<?php if( $register ) { ?>
 		<div class='box-signup'>
-			<form cmt-app="site" cmt-controller="<?=$widget->registerCmtController?>" cmt-action="<?=$widget->registerCmtAction?>" action="<?=$widget->registerAction?>">
+			<?php if( $registerDisabled ) { ?>
+				<p class="info"><?= $registerMessage ?>
+			<?php } else { ?>
+			<form cmt-app="site" cmt-controller="<?= $widget->registerCmtController ?>" cmt-action="<?= $widget->registerCmtAction ?>" action="<?= $widget->registerAction ?>">
 				<div class="max-area-cover spinner">
 					<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 				</div>
 				<div class="wrap-signup-fields">
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Email *</label>
 						<?php } ?>
@@ -119,7 +126,7 @@ use yii\helpers\Html;
 						<?php } ?>
 						<span class="error" cmt-error="email"></span>
 					</div>
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Password *</label>
 						<?php } ?>
@@ -133,7 +140,7 @@ use yii\helpers\Html;
 						<?php } ?>
 						<span class="error" cmt-error="password"></span>
 					</div>
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Confirm Password *</label>
 						<?php } ?>
@@ -149,7 +156,7 @@ use yii\helpers\Html;
 					</div>
 
 					<?php if( $optionalFields ) { ?>
-					<div class="frm-field clearfix">
+					<div class="frm-field">
 						<?php if( $label ) { ?>
 							<label>Username</label>
 						<?php } ?>
@@ -202,16 +209,17 @@ use yii\helpers\Html;
 					</div>
 				</div>
 				<div class="filler-height"></div>
-				<div>
-					<input type="submit" name="submit" value="Sign Up">
-				</div>
 				<div class="message success"></div>
 				<div class="message warning"></div>
 				<div class="message error"></div>
+				<div>
+					<input type="submit" name="submit" value="Sign Up">
+				</div>
 				<div class="wrap-login-btn">
 					<span class="btn-login">Login</span>
 				</div>
 			</form>
+			<?php } ?>
 		</div>
 	<?php } ?>
 </div>
