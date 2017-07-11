@@ -2,21 +2,19 @@
 namespace cmsgears\widgets\login;
 
 // Yii Imports
-use \Yii;
-use yii\base\Widget;
 use yii\helpers\Html;
 
 // CMG Imports
 use cmsgears\core\common\config\CoreProperties;
 
-use cmsgears\widgets\login\assets\LoginAssets;
+use cmsgears\core\common\base\Widget;
 
 // TODO: Add a bootstrap view apart from cmgtools
 
 /**
  * The AjaxLogin widget can be used to embed ajaxified login form within the view.
  */
-class AjaxLogin extends \cmsgears\core\common\base\Widget {
+class AjaxLogin extends Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -58,7 +56,7 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	public $fieldIcon		= true;
 
 	/**
-	 * It determines whether option fields i.e. username, first name and last name should be displayed.
+	 * It determines whether option fields i.e. username, first name and last name should be displayed on register box.
 	 */
 	public $optionalFields	= true;
 
