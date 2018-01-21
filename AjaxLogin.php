@@ -2,19 +2,19 @@
 namespace cmsgears\widgets\login;
 
 // Yii Imports
-use \Yii;
-use yii\base\Widget;
 use yii\helpers\Html;
 
 // CMG Imports
-use cmsgears\widgets\login\assets\LoginAssets;
+use cmsgears\core\common\config\CoreProperties;
+
+use cmsgears\core\common\base\Widget;
 
 // TODO: Add a bootstrap view apart from cmgtools
 
 /**
  * The AjaxLogin widget can be used to embed ajaxified login form within the view.
  */
-class AjaxLogin extends \cmsgears\core\common\base\Widget {
+class AjaxLogin extends Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -26,52 +26,77 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	public $login			= true;
 
 	/**
+	 * Message to be displayed if login is disabled.
+	 */
+	public $loginMessage	= 'Login is disabled by site admin';
+
+	/**
 	 * It determines whether register box is required.
 	 */
 	public $forgotPassword	= true;
 
 	/**
+	 * Message to be displayed if registration is disabled.
+	 */
+	public $registerMessage	= 'Registration is disabled by site admin';
+
+	/**
 	 * It determines whether register box is required.
 	 */
-	public $register	= true;
+	public $register		= true;
 
 	/**
 	 * It determines whether label should be displayed.
 	 */
-	public $label		= false;
+	public $label			= false;
 
 	/**
 	 * It determines whether field icon should be displayed.
 	 */
-	public $fieldIcon	= true;
+	public $fieldIcon		= true;
 
 	/**
-	 * It determines whether option fields i.e. username, first name and last name should be displayed.
+	 * It determines whether option fields i.e. username, first name and last name should be displayed on register box.
 	 */
 	public $optionalFields	= true;
 
 	/**
 	 * It determines whether the login and register box actions are included in widget. The actions can also lie outside the widget.
 	 */
-	public $actions		= false;
+	public $actions			= false;
 
     /**
      * Dynamic Controller Actions
      */
     //----------- Login ----------------
-    public $loginCmtController      = 'user';
+
+    public $loginCmtController      = 'site';
     public $loginCmtAction          = 'login';
     public $loginAction             = 'site/login';
 
     //----------- Forgot ----------------
-    public $forgotCmtController     = 'user';
-    public $forgotCmtAction         = 'forgotPassword';
+
+    public $forgotCmtController     = 'site';
+    public $forgotCmtAction         = 'default';
     public $forgotAction            = 'site/forgot-password';
 
     //----------- Register ----------------
-    public $registerCmtController   = 'user';
-    public $registerCmtAction       = 'register';
+
+    public $registerCmtController   = 'site';
+    public $registerCmtAction       = 'default';
     public $registerAction          = 'site/register';
+
+    // Private
+
+    /**
+     * Flag to check whether login is disabled by site admin.
+     */
+    private $loginDisabled;
+
+    /**
+     * Flag to check whether registration is disabled by site admin.
+     */
+    private $registerDisabled;
 
 	// Constructor and Initialisation ------------------------------
 
@@ -83,6 +108,10 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
     public function init() {
 
         parent::init();
+
+        $this->loginDisabled	= !CoreProperties::getInstance()->isLogin();
+
+        $this->registerDisabled	= !CoreProperties::getInstance()->isRegistration();
     }
 
 	// Instance Methods --------------------------------------------
@@ -94,11 +123,6 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 	 */
     public function run() {
 
-		if( $this->loadAssets ) {
-
-			LoginAssets::register( $this->getView() );
-		}
-
 		$widgetHtml = $this->renderWidget();
 
 		// wraps both the login and register boxes in a div.
@@ -109,7 +133,11 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 
 		$widgetHtml = $this->render( $this->template, [
 			'login' => $this->login,
+			'loginDisabled' => $this->loginDisabled,
+			'loginMessage' => $this->loginMessage,
 			'forgotPassword' => $this->forgotPassword,
+			'registerDisabled' => $this->registerDisabled,
+			'registerMessage' => $this->registerMessage,
 			'register' => $this->register,
 			'label' => $this->label,
 			'fieldIcon' => $this->fieldIcon,
@@ -121,5 +149,3 @@ class AjaxLogin extends \cmsgears\core\common\base\Widget {
 		return $widgetHtml;
 	}
 }
-
-?>
