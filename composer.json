@@ -1,12 +1,12 @@
 {
 	"name": "cmsgears/widget-login",
 	"description": "Login Widget for CMSGears provide Ajax based login and registration forms that can be called at desired location on a web page.",
-	"homepage": "http://www.cmsgears.org",
+	"homepage": "https://www.cmsgears.org",
 	"type": "package",
 	"keywords": [ "yii2", "cmsgears", "widget", "login", "ajax login" ],
-	"license": "GPLv3",
+	"license": "GPL-3.0-or-later",
 	"support": {
-		"resources": "http://www.cmsgears.org/"
+		"resources": "https://www.cmsgears.org/"
 	},
 	"autoload": {
 		"psr-4": {
