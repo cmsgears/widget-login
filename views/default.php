@@ -51,7 +51,7 @@ use yii\helpers\Html;
 						</div>
 					</div>
 					<div class="btn-forgot-wrap">
-						<?= Html::a( "Forgot your Password ?", [ '/forgot-password' ], [ 'class' => 'btn-forgot' ] ) ?>
+						<?= Html::a( "Forgot your Password?", [ '/forgot-password' ], [ 'class' => 'btn-forgot' ] ) ?>
 					</div>
 					<div class="filler-height"></div>
 					<div>
@@ -95,7 +95,7 @@ use yii\helpers\Html;
 							</div>
 						</div>
 						<div class="btn-login-wrap">
-							<?= Html::a( "Login ?", [ '/login' ], [ 'class' => 'btn-login' ] ) ?>
+							<?= Html::a( "Login", [ '/login' ], [ 'class' => 'btn-login' ] ) ?>
 						</div>
 						<div class="filler-height"></div>
 						<div class="message success"></div>
