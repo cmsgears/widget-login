@@ -87,6 +87,7 @@ class LoginWidget extends Widget {
 
     // -- Login ----------------
 
+    public $loginCmtApp      	    = 'site';
     public $loginCmtController      = 'site';
     public $loginCmtAction          = 'login';
     public $loginAction             = 'site/login';

@@ -16,7 +16,7 @@ use yii\helpers\Html;
 				<?php if( $loginDisabled ) { ?>
 				<p class="info"><?= $loginMessage ?></p>
 				<?php } else { ?>
-				<form cmt-app="site" cmt-controller="<?= $widget->loginCmtController ?>" cmt-action="<?= $widget->loginCmtAction ?>" action="<?= $widget->loginAction ?>">
+				<form cmt-app="<?= $widget->loginCmtApp ?>" cmt-controller="<?= $widget->loginCmtController ?>" cmt-action="<?= $widget->loginCmtAction ?>" action="<?= $widget->loginAction ?>">
 					<div class="max-area-cover spinner">
 						<div class="valign-center cmti cmti-2x cmti-spinner-1 spin"></div>
 					</div>
