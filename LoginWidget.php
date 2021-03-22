@@ -15,14 +15,13 @@ use yii\helpers\Html;
 // CMG Imports
 use cmsgears\core\common\config\CoreProperties;
 
-use cmsgears\core\common\base\Widget;
-
 /**
- * The LoginWidget can be used to embed ajaxified login, register and forgot password form.
+ * The LoginWidget can be used to embed login, register and forgot password form. It's using
+ * the Velocity Framework to handle communication with the server.
  *
  * @since 1.0.0
  */
-class LoginWidget extends Widget {
+class LoginWidget extends \cmsgears\core\common\base\Widget {
 
 	// Variables ---------------------------------------------------
 
@@ -85,23 +84,25 @@ class LoginWidget extends Widget {
 	 */
 	public $actions = false;
 
+	public $loginApp = 'core';
+
     // -- Login ----------------
 
-    public $loginCmtController      = 'site';
-    public $loginCmtAction          = 'login';
-    public $loginAction             = 'site/login';
+	public $loginController	= 'site';
+	public $loginAction		= 'login';
+	public $loginUrl		= 'site/login';
 
     // -- Register -------------
 
-    public $registerCmtController   = 'site';
-    public $registerCmtAction       = 'default';
-    public $registerAction          = 'site/register';
+	public $registerController	= 'site';
+	public $registerAction		= 'default';
+	public $registerUrl			= 'site/register';
 
 	// -- Forgot Password ------
 
-    public $forgotCmtController     = 'site';
-    public $forgotCmtAction         = 'default';
-    public $forgotAction            = 'site/forgot-password';
+	public $forgotController	= 'site';
+	public $forgotAction		= 'default';
+	public $forgotUrl			= 'site/forgot-password';
 
 	// Protected --------------
 
